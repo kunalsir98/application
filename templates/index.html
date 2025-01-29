@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content fade-in">
+        <h1>Revolutionize Your Business with SaaSify</h1>
+        <p>AI-powered solutions to boost productivity, scalability, and security for your business.</p>
+        <a href="/dashboard" class="cta-button">Get Started</a>
+    </div>
+    <img src="{{ url_for('static', filename='images/hero-image.jpg') }}" alt="Hero Image" class="hero-image">
+</section>
+
+<section class="features">
+    <h2 class="fade-in">Platform Features</h2>
+    <div class="feature-grid">
+        <div class="feature-card slide-up">
+            <h3>AI Analytics</h3>
+            <p>Gain valuable insights with real-time AI-powered analytics and predictions.</p>
+        </div>
+        <div class="feature-card slide-up">
+            <h3>Custom Dashboards</h3>
+            <p>Create customizable dashboards tailored to your business needs.</p>
+        </div>
+        <div class="feature-card slide-up">
+            <h3>Security</h3>
+            <p>Top-notch data protection and secure infrastructure for your business.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
