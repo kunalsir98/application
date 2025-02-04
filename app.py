@@ -88,6 +88,15 @@ def dashboard():
         flash(f'Error: {e}', 'danger')
         return redirect(url_for('login'))
 
+@app.route('/projects')
+def projects():
+    return render_template('projects.html', title="Projects")
+
+@app.route('/resources')
+def resources():
+    return render_template('resources.html', title="Resources")
+
+
 # Logout
 @app.route('/logout')
 def logout():

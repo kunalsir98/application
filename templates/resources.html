@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Resources{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center text-white mb-6">Resources</h1>
+    <p class="text-center text-gray-400 mb-8">Here are some helpful links and tools to enhance your project!</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Resource Card Template -->
+        {% for resource in resources %}
+        <div class="bg-gray-800 p-4 w-64 mx-auto rounded-2xl shadow-md hover:shadow-lg transition-shadow">
+            <img src="{{ url_for('static', filename=resource.image) }}" alt="{{ resource.alt }}" class="w-40 h-24 object-contain mx-auto rounded-xl mb-3">
+            <h2 class="text-xl font-semibold text-white mb-1">{{ resource.title }}</h2>
+            <p class="text-gray-400 text-sm mb-3">{{ resource.description }}</p>
+            <a href="{{ resource.link }}" target="_blank" class="text-blue-400 hover:text-blue-500 text-sm">Visit Site →</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-8">
+        <a href="/" class="bg-blue-500 text-white py-2 px-4 rounded-xl hover:bg-blue-600 transition-colors">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
